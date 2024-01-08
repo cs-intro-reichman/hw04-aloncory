@@ -73,7 +73,7 @@ public class StringOps {
         String answerString = ""; // Initializing an empty string , which will save the answer.
             for (int i = 0; i < string.length(); i++) {
                 char currentChar = string.charAt(i); 
-                // Checks if the char is an uppercase letter and is not after a space char
+                // Checks if the char is an uppercase letter and is not located after a space char
                 if (currentChar >= 'A' && currentChar <= 'Z' && (i == 0 || ((i >= 1) && string.charAt(i - 1) != ' '))) {
                     currentChar += 32; // Converts an uppercase letter to lowercase letter
                 } else if (currentChar >= 'a' && currentChar <= 'z' && (i >= 1) && string.charAt(i - 1) == ' ') {
