@@ -52,7 +52,7 @@ public class ArrayOps {
                 i++;
             }
         }
-        return -1; // Compilation requirement
+        return 0; // Compilation requirement
     }
     /* This function takes an array of integers, and returns the second largest number in the array. The
     numbers in the array may appear more than once. Assume that the array’s length is > 1. */
@@ -112,6 +112,4 @@ public class ArrayOps {
         } 
         return (isSortedDecreasingly || isSortedIncreasingly);
     }
-    }
-
 }
