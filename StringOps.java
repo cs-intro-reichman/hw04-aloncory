@@ -70,6 +70,10 @@ public class StringOps {
     remaining letters in the word are changed to lowercase (if they are not lowercase already).
     3. All the spaces (if any) are removed. */
     public static String camelCase (String string) {
+        // Cuts spaces at the beginning of the input string
+        while (string.charAt(0) == ' ') {
+            string = string.substring(1);
+        }
         String answerString = ""; // Initializing an empty string , which will save the answer.
             for (int i = 0; i < string.length(); i++) {
                 char currentChar = string.charAt(i); 
