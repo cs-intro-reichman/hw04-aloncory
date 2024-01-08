@@ -83,7 +83,7 @@ public class StringOps {
                 } else if (currentChar >= 'a' && currentChar <= 'z' && (i >= 1) && string.charAt(i - 1) == ' ') {
                     currentChar -= 32; // Converts a lowercase letter to uppercase letter
                 } if (currentChar != ' ') {
-                    answerString += currentChar; // Add the processed char to the answer string
+                    answerString += currentChar; // Adds the processed char to the answer string
                 }
             }
         return answerString; // Returns the processed string
