@@ -31,6 +31,14 @@ public class StringOps {
         System.out.println(capVowelsLowRest("yellow")); // “yEllOw”;
         System.out.println(capVowelsLowRest("Xi Jinping")); // “xI jInpIng”;
         System.out.println(); // Prints an empty line
+        System.out.println("Checks \"camelCase\" :");
+        System.out.println(camelCase("Hello World")); // “helloWorld”
+        System.out.println(camelCase("HELLO   world")); // “helloWorld”
+        System.out.println(camelCase(" tWo    wordS")); // “twoWords”
+        System.out.println(camelCase("world")); // “world”
+        System.out.println(camelCase("   Intro to  coMPUter   sCIEncE ")); // “introToComputerScience”
+        System.out.println(camelCase("Xi Jinping")); // “xiJinping”
+        System.out.println(); // Prints an empty line
     }
     /* This function takes as input a string containing only letters, organized into words that are
     separated with a single space (assume that the input is valid).
@@ -48,7 +56,7 @@ public class StringOps {
             }
             // Checks if the char is an lowerletter and a vowel
             if (vowels.indexOf(currentChar) != -1) {
-                currentChar -= 32; // Converts a lowercase letter to uppercas letter
+                currentChar -= 32; // Converts a lowercase letter to uppercase letter
             }
             answerString += currentChar; // Add the processed char to the answer string
         }
@@ -62,8 +70,19 @@ public class StringOps {
     remaining letters in the word are changed to lowercase (if they are not lowercase already).
     3. All the spaces (if any) are removed. */
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String answerString = ""; // Initializing an empty string , which will save the answer.
+            for (int i = 0; i < string.length(); i++) {
+                char currentChar = string.charAt(i); 
+                // Checks if the char is an uppercase letter and is not after a space char
+                if (currentChar >= 'A' && currentChar <= 'Z' && (i == 0 || ((i >= 1) && string.charAt(i - 1) != ' '))) {
+                    currentChar += 32; // Converts an uppercase letter to lowercase letter
+                } else if (currentChar >= 'a' && currentChar <= 'z' && (i >= 1) && string.charAt(i - 1) == ' ') {
+                    currentChar -= 32; // Converts a lowercase letter to uppercase letter
+                } if (currentChar != ' ') {
+                    answerString += currentChar; // Add the processed char to the answer string
+                }
+            }
+        return answerString; // Returns the processed string
     }
 
     public static int[] allIndexOf (String string, char chr) {
