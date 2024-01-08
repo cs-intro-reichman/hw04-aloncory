@@ -22,32 +22,12 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println("Tests StringOps:");
-        System.out.println("Checks \"capVowelsLowRes\" :");
-        System.out.println(capVowelsLowRest("Hello World")); //  “hEllO wOrld”;
-        System.out.println(capVowelsLowRest("One two tHRee world")); // “OnE twO thrEE wOrld”;
-        System.out.println(capVowelsLowRest("vowels are fun")); // “vOwEls ArE fUn”;
-        System.out.println(capVowelsLowRest("intro")); // “IntrO”;
-        System.out.println(capVowelsLowRest("yellow")); // “yEllOw”;
-        System.out.println(capVowelsLowRest("Xi Jinping")); // “xI jInpIng”;
-        System.out.println(); // Prints an empty line
         
     }
 
     public static String capVowelsLowRest (String string) {
-        String answerString = "";
-        String vowels = "aeiou";
-        for (int i = 0; i < string.length(); i++) {
-            char currentChar = string.charAt(i);
-            if (currentChar >= 'A' && currentChar <= 'Z') {
-                currentChar += 32;
-            }
-            if (vowels.indexOf(currentChar) != -1) {
-                currentChar -= 32;
-            }
-            answerString += currentChar;
-        }
-        return answerString;
+        // Write your code here:
+        return "";
     }
 
     public static String camelCase (String string) {
