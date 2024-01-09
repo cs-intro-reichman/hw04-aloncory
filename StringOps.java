@@ -39,6 +39,14 @@ public class StringOps {
         System.out.println(camelCase("   Intro to  coMPUter   sCIEncE ")); // “introToComputerScience”
         System.out.println(camelCase("Xi Jinping")); // “xiJinping”
         System.out.println(); // Prints an empty line
+        System.out.println("Checks \"allIndexOf\" :");
+        printArray(allIndexOf("Hello world",'l')); // output: {2, 3, 9}
+        printArray(allIndexOf("Hello worLd",'l')); // output: {2, 3}
+        printArray(allIndexOf("Hello world",'o')); // output: {4, 7}
+        printArray(allIndexOf("Hello world",' ')); // output: {5}
+        printArray(allIndexOf("Hello world",'d')); // output: {10}
+        printArray(allIndexOf("MMMM",'M')); // output: {0, 1, 2, 3}
+        printArray(allIndexOf("Xi Jinping", 'i')); // output: {1, 4, 7}
     }
     /* This function takes as input a string containing only letters, organized into words that are
     separated with a single space (assume that the input is valid).
@@ -88,9 +96,40 @@ public class StringOps {
             }
         return answerString; // Returns the processed string
     }
-
+    /* This function receives two parameters: A string and a character. The function returns an array
+    containing all the indexes in which the character appears in the string.
+    Assume that the given string is not empty, and that the given character appears in the string at
+    least once. */
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int indexLen = 0; 
+        // This loop determines the size of the array that containing all the indexes in which the character appears in the string.
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                indexLen++;
+            }
+        }
+        int[] indexArray = new int[indexLen]; // Inits an array that contains all the indexes in which the character appears in the string.
+        int j = 0; 
+        // This loop populates indexArray with values.
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                indexArray[j] = i; 
+                j++;
+            }
+        }
+        return indexArray; // Returns the indexArray
+    }
+    // This function is used to print arrays
+    public static void printArray (int[] array) {
+        System.out.print("{");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i == array.length - 1) {
+                System.out.print("}");
+            } else {
+                System.out.print(", ");
+            }
+        }
+        System.out.println(); // Moves to the next line in the printing
     }
 }
