@@ -55,7 +55,7 @@ public class StringOps {
     lowercase in the original string, they remain the same). */
     public static String capVowelsLowRest (String string) {
         String answerString = ""; // Initializing an empty string , which will save the answer.
-        String vowels = "aeiou"; // 
+        String vowels = "aeiou"; // This string saves all the vowel in English
         for (int i = 0; i < string.length(); i++) {
             char currentChar = string.charAt(i);
             // Checks if the char is an upper letter
@@ -84,7 +84,7 @@ public class StringOps {
         }
         String answerString = ""; // Initializing an empty string , which will save the answer.
             for (int i = 0; i < string.length(); i++) {
-                char currentChar = string.charAt(i); 
+                char currentChar = string.charAt(i); // Gets the char at the i-th place of the original string
                 // Checks if the char is an uppercase letter and is not located after a space char
                 if (currentChar >= 'A' && currentChar <= 'Z' && (i == 0 || ((i >= 1) && string.charAt(i - 1) != ' '))) {
                     currentChar += 32; // Converts an uppercase letter to lowercase letter
