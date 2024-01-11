@@ -121,15 +121,11 @@ public class StringOps {
     }
     // This function is used to print arrays
     public static void printArray (int[] array) {
-        System.out.print("{");
-        for (int i = 0; i < array.length; i++) {
+        System.out.print("[");
+        for (int i = 0; i < array.length - 1; i++) {
             System.out.print(array[i]);
-            if (i == array.length - 1) {
-                System.out.print("}");
-            } else {
-                System.out.print(", ");
-            }
         }
+        System.out.print(array[array.length - 1] + "]");
         System.out.println(); // Moves to the next line in the printing
     }
 }
