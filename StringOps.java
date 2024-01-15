@@ -119,7 +119,7 @@ public class StringOps {
         }
         return indexArray; // Returns the indexArray
     }
-    // This function is used to print arrays
+    /* This function is used to print arrays */
     public static void printArray (int[] array) {
         System.out.print("[");
         for (int i = 0; i < array.length - 1; i++) {
