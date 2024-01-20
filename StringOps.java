@@ -54,6 +54,7 @@ public class StringOps {
     changed to uppercase, and all the other characters are changed to lowercase (if they were
     lowercase in the original string, they remain the same). */
     public static String capVowelsLowRest (String string) {
+        // #feedback: great implementation!
         String answerString = ""; // Initializing an empty string , which will save the answer.
         String vowels = "aeiou"; // This string saves all the vowel in English
         for (int i = 0; i < string.length(); i++) {
@@ -83,6 +84,7 @@ public class StringOps {
             string = string.substring(1);
         }
         String answerString = ""; // Initializing an empty string , which will save the answer.
+        // #feedback: your condition lines are too long, you might consider method like `isCapital` to explain better the condition
             for (int i = 0; i < string.length(); i++) {
                 char currentChar = string.charAt(i); // Gets the char at the i-th place of the original string
                 // Checks if the char is an uppercase letter and is not located after a space char
