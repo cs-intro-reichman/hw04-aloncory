@@ -37,10 +37,10 @@ public class ArrayOps {
     function returns the missing integer. Assume that the input is valid (obeys the rules described
     above), and that the array’s length is ≥ 1 */
     public static int findMissingInt (int [] array) {
-        int i = 0; // Initializing a varible.
         int n = array.length; // Initializing n as the length of the array input
         // Loops through all interegs between 0 and n , inclusive , unless a missing int is found
-        while (i <= n) {
+        // #feedback: better to use here for loop
+        for (int i = 0; i <= n; i++) {
             boolean isMissing = true;
             // Checks if the integer i is already included in the array, else, it retruns the value of i as the missing integer.
             for (int j = 0; j < array.length && isMissing; j++) {
@@ -48,11 +48,10 @@ public class ArrayOps {
             }
             if (isMissing) {
                 return i;
-            } else {
-                i++;
             }
         }
-        return 0; // Compilation requirement
+        // #feedback: as in the example provided of {0} you should return 1, so here you should return n (since it's not in non-missing integer array of size n)
+        return n; // Compilation requirement
     }
     /* This function takes an array of integers, and returns the second largest number in the array. The
     numbers in the array may appear more than once. Assume that the array’s length is > 1. */
@@ -66,7 +65,18 @@ public class ArrayOps {
                 maxIndex = i;
             }
         }
-        int secondMaxValue = array[0];
+        /*
+            #feedback:
+            What about the case maxIndex = 0? it lead a wrong answer...
+            Consider this array {3, 2, 1}
+            secondMaxValue = 3 so no different max will be found.
+        */
+        int secondMaxValue;
+        if (maxIndex == 0) {
+            secondMaxValue = arr[1];
+        } else {
+            secondMaxValue = arr[0];
+        }
         // Calculates the second largest number in the array.
         for (int j = 0; j < array.length; j++) {
             if (array[j] > secondMaxValue && j != maxIndex) {
@@ -85,7 +95,8 @@ public class ArrayOps {
                 isMember = isMember || (array1[i] == array2[j]);
             }
             if (!isMember) {
-                return isMember;
+                // #feedback: be clear with return value in such case there is only one possible result 
+                return false;
             }
         }
         return true;
@@ -96,20 +107,20 @@ public class ArrayOps {
     public static boolean isSorted(int [] array) {
         boolean isSortedIncreasingly = true;
         boolean isSortedDecreasingly = true; 
+        // #feedback: You could merge logics within same loop.
         // Checks if the array is sorted decreasingly
         for (int i = 0; i < array.length - 1; i++) {
             if (array [i + 1] > array[i]) {
                 isSortedDecreasingly = false;
-                break; // Escapes out of loop
             } 
-        }
-        // Checks if the array is sorted increasingly
-        for (int i = 0; i < array.length - 1; i++) {
             if (array [i + 1] < array[i]) {
                 isSortedIncreasingly = false;
-                break; // Escapes out of loop
             } 
-        } 
-        return (isSortedDecreasingly || isSortedIncreasingly);
+            if (!isSortedDecreasingly && !isSortedIncreasingly) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
