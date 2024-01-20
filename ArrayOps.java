@@ -89,6 +89,7 @@ public class ArrayOps {
     numbers. The number of occurrences of each number, and their order, are not important (note:
     this is similar to checking the identity of sets in mathematics). */
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
+        // #feedback: you validated only one direction, when array1 is subset of array2, but not when array2 is subset of array1
         for (int i = 0; i < array1.length; i++) {
             boolean isMember = false;
             for (int j = 0; j < array2.length; j++) {
